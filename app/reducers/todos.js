@@ -1,10 +1,27 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
-const initialState = [{
-  text: 'Use Redux',
-  completed: false,
-  id: 0
-}];
+const initialState = [
+  {
+    text: 'Business Challenges Overview',
+    completed: false,
+    id: 0
+  },
+  {
+    text: 'Value Proposition Matrix',
+    completed: false,
+    id: 1
+  },
+  {
+    text: 'Trade off Chart',
+    completed: false,
+    id: 2
+  },
+  {
+    text: 'Trial Executive Summary',
+    completed: false,
+    id: 3
+  },
+];
 
 const actionsMap = {
   [ActionTypes.ADD_TODO](state, action) {
