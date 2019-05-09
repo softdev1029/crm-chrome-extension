@@ -34,35 +34,10 @@ export default class MainSection extends Component {
   };
 
   renderToggleAll(completedCount) {
-    const { todos, actions } = this.props;
-    if (todos.length > 0) {
-      return (
-        <input
-          className={style.toggleAll}
-          type="checkbox"
-          checked={completedCount === todos.length}
-          onChange={actions.completeAll}
-        />
-      );
-    }
+    // const { todos, actions } = this.props;
   }
 
   renderFooter(completedCount) {
-    const { todos } = this.props;
-    const { filter } = this.state;
-    const activeCount = todos.length - completedCount;
-
-    if (todos.length) {
-      return (
-        <Footer
-          completedCount={completedCount}
-          activeCount={activeCount}
-          filter={filter}
-          onClearCompleted={this.handleClearCompleted}
-          onShow={this.handleShow}
-        />
-      );
-    }
   }
 
   render() {
