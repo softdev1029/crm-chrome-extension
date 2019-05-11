@@ -4,6 +4,9 @@ import InfoField from './InfoField';
 import SubmitButton from './SubmitButton';
 import style from './InfoField.css';
 
+
+
+
 export default class InfoGraph extends Component {
 
   static propTypes = {
@@ -19,13 +22,12 @@ export default class InfoGraph extends Component {
   }
 
   render() {
-    // const { infoGraph } = this.props;
-
     return (
       <div className={style.main}>
         <InfoField />
         <InfoField />
         <InfoField />
+        <input type="file" name="logo1" />
         <SubmitButton />
       </div>
     );
