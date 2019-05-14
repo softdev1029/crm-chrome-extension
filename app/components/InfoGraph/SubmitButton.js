@@ -29,7 +29,7 @@ export default class SubmitButton extends Component {
 
   render() {
     const { actions, routes } = this.props;
-    debugger
+    
     return (
       <div className={style.main}>
         <button className={style.submit} onClick={() => actions.gotoInfoGraph()} name="Submit">Submit</button>

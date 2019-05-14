@@ -49,14 +49,15 @@ const subbutton = {
   
   const gtdivinner  = {
     width: "100%",
-    height: "90%",
+    position: "relative",
+    height: "362px",
     "border-left": "2px solid",
-    "margin-bottom": "115px",
+    "margin-bottom": "50px",
     "border-bottom": "2px solid"
   }
   
   const rbddiv  = {
-    width: "300px",
+    width: "260px",
     height: "280px",
     position: "relative",
     top: "80px",
@@ -69,7 +70,7 @@ const subbutton = {
   }
   
   const gtddiv1  = {
-    width: "55%",
+    width: "245px",
     height: "30%",
     position: "relative",
     top: "-32px",
@@ -78,7 +79,7 @@ const subbutton = {
   }
   
   const gtddiv2  = {
-    width: "150px",
+    width: "120px",
     height: "55%",
     position: "relative",
     top: "-232px",
@@ -86,9 +87,35 @@ const subbutton = {
     "border-right": "2px dashed green"
   }
 
+  const svgstyle = {"position": "relative", top: "-593px"};
+  const svgstyle2 = {"position": "relative", top: "-830px"};
+  const pathcss = {
+    "stroke-width": "2px",
+    "stroke": "red",
+    "stroke-linecap": "round",
+    "fill": "none"
+  };
+
+  const img1s = {
+    width: "60px;",
+    position: "absolute;",
+    left: "-70px;",
+    top: "150px;"
+  };
+
+  const img2s = {
+    width: "60px;",
+    position: "absolute;",
+    left: "-70px;",
+    top: "150px;"
+  };
+
+
   @connect(
     state => ({
-      routes: state.routes
+      routes: state.routes,
+      isWindow: state.isWindow,
+      formvalues: state.formvalues
     }),
     dispatch => ({
       actions: bindActionCreators(RouteAction, dispatch)
@@ -100,16 +127,52 @@ export default class InfoGraphView extends Component {
     this.state = {
     };
     this.document = null;
+    this.pdfButton = null;
+    this.outputd1 = null;
+    this.outputd2 = null;
+  }
+
+  componentDidMount() {
+    this.outputd1.style.display = "none";
+    this.outputd2.style.display = "none";
   }
 
   exportPDF() {
-        html2canvas(this.document).then(function(canvas){
+        /*html2canvas(this.document).then(function(canvas){
             var img=canvas.toDataURL("image/png");
             var doc = new jsPDF();
             doc.addImage(img,'JPEG',40,40);
             doc.save('report.pdf');     
-        });
+        });*/
+        this.pdfButton.style.display = "none";
+        window.print();  
+        setTimeout(() => {
+          this.pdfButton.style.display = "block";
+        }, 100);
   }
+
+  loadFile(event, type) {
+    if(type == 1) {
+      this.outputd1.src = URL.createObjectURL(event.target.files[0]);
+      this.outputd1.style.display = "block";
+      this.outputd1.style.width = "60px";
+      this.outputd1.style.position = "absolute";
+      this.outputd1.style.left = "-70px";
+      this.outputd1.style.top = "150px";
+      this.filei1.style.display = "none";
+    }
+    else if(type == 2) {
+      this.outputd2.src = URL.createObjectURL(event.target.files[0]);
+      this.outputd2.style.display = "block";
+      this.outputd2.style.width = "60px";
+      this.outputd2.style.position = "absolute";
+      this.outputd2.style.right = "-25px";
+      this.outputd2.style.top = "50px";
+      this.filei2.style.display = "none";
+    }
+    //var output = document.getElementById('output');
+    //output.src = URL.createObjectURL(event.target.files[0]);
+  };
 
   render() {
     const { actions, routes } = this.props;
@@ -131,15 +194,27 @@ therefore allowing you to increase your resources to obtain both priorities to a
           </div>
           <div style={gtdiv}>
             <div style={gtdivinner}>
+                <label style={{position: "absolute", left: "-52px"}}>{routes.formvalues.val1}</label>
+                <label style={{position: "absolute", right: "-52px", bottom: "0"}}>{routes.formvalues.val2}</label>
+                <input accept="image/*" ref={(i) => this.filei1 = i} onChange={(event) => this.loadFile(event, 1)} style={{position: "absolute", top: "150px", left: "-70px", width: "0px"}} type="file" id="file1" title="Logo 1"/>
+                <img id="output1" style={img1s} ref={(c) => this.outputd1 = c}/>
+                <input accept="image/*" ref={(i) => this.filei2 = i} onChange={(event) => this.loadFile(event, 2)} style={{position: "absolute", width: "0px", right: "50px", zIndex: "999999"}} type="file" id="file2" title="Logo 2"/>
+                <img id="output2" style={img2s} ref={(c) => this.outputd2 = c}/>
                 <div style={rbddiv}></div>
                 <div style={gtddiv1}></div>
                 <div style={gtddiv2}></div>
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style={svgstyle}>
+<path xmlns="http://www.w3.org/2000/svg" style={pathcss} id="curve" d="M0,1 C266,26 465,104 380,720" ></path>
+</svg>
+<svg width="100%" height="66%" xmlns="http://www.w3.org/2000/svg" style={svgstyle2}>
+<path xmlns="http://www.w3.org/2000/svg" style={pathcss} id="curve" d="M0,10 C216,26 265,104 280,230" ></path>
+</svg>
+
             </div>
           </div>
       </div>
         <div>
-          <button style={subbutton} onClick={() => this.exportPDF()}>Export PDF</button>
-          <button onClick={() => actions.gotoHome()}>Back</button>
+          <button ref={(b) => this.pdfButton = b} style={subbutton} onClick={() => this.exportPDF()}>Export PDF</button>
         </div>
         </div>
     );

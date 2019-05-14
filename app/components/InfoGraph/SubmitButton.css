@@ -1,4 +1,11 @@
 .submit {
   width: 6rem;
   height: 2rem;
+  border: 2px solid gray;
+  border-radius: 15px;
+}
+
+.main {
+  text-align: center;
+  padding: 10px;
 }
