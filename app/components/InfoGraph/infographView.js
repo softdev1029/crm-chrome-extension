@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas';
 import * as RouteAction from '../../actions/routes';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import style from "./infographView.css";
 
 
 
@@ -39,12 +40,6 @@ const bottomdiv = {
   "position": "relative",
   "top": "-198px",
   "margin": "auto"
-}
-
-const gtdiv = {
-  width: "400px",
-  height: "300px",
-  margin: "auto"
 }
 
 const gtdivinner = {
@@ -186,7 +181,7 @@ Because these are competing values, your challenge is to choose a balance betwee
             <div style={topdiv}></div>
             <div style={bottomdiv}></div>
           </div>
-          <div style={gtdiv}>
+          <div className={style.gtdiv}>
             <div style={gtdivinner}>
               <label style={{ position: "absolute", left: "-52px" }}>{routes.formvalues.val1}</label>
               <label style={{ position: "absolute", right: "-52px", bottom: "0" }}>{routes.formvalues.val2}</label>
