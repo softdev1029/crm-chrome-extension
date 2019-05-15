@@ -43,7 +43,7 @@ const bottomdiv = {
 
 const gtdiv = {
   width: "400px",
-  height: "400px",
+  height: "300px",
   margin: "auto"
 }
 
@@ -52,7 +52,7 @@ const gtdivinner = {
   position: "relative",
   height: "260px",
   "border-left": "2px solid",
-  "margin-bottom": "50px",
+  "margin-bottom": "20px",
   "border-bottom": "2px solid"
 }
 
