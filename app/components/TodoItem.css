@@ -8,13 +8,21 @@
 }
 
 .normal label[data-status="true"]:before {
-  content: "-";
+  content: " ";
+  transform: rotate(45deg);
 }
 .normal label:before {
-  content: ">";
+  content: " ";
   display: block;
   width: 10px;
   height: 10px;
   float: left;
-  margin: 0 6px 0 0;
+  margin: 6px 16px 0 0;
+
+  box-sizing: border-box;
+  border-style: solid;
+  /* border-color: white; */
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(-45deg);
+  transition: border-width 150ms ease-in-out;
 }

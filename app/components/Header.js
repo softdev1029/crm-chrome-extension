@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import style from './Header.css';
 
 export default class Header extends Component {
 
@@ -15,7 +16,12 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <h1>Sellify</h1>
+        <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={style.img} />
+        <div className={style.credit_box} >
+          <h2 className={style.credit_num} >340</h2>
+          <h2 className={style.credit_num_suffix} >CREDITS</h2>
+          <button className={style.credit_add} >ADD CREDITS</button>
+        </div>
       </header>
     );
   }
