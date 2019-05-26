@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-// import classnames from 'classnames';
-import InfoField from './InfoField';
-import SubmitButton from './SubmitButton';
-import style from './InfoField.css';
-import * as RouteAction from '../../actions/routes';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
+// import classnames from 'classnames';
+import InfoField from './InfoField';
+// import SubmitButton from './SubmitButton';
+import style from './InfoField.css';
+import * as RouteAction from '../../actions/routes';
 
 @connect(
   state => ({
@@ -19,16 +18,17 @@ import { connect } from 'react-redux';
 export default class InfoGraph extends Component {
 
   static propTypes = {
-    infoGraph: PropTypes.object.isRequired,
+    // infoGraph: PropTypes.object.isRequired,
     // editInfoGraph: PropTypes.func.isRequired,
     // completeInfoGraph: PropTypes.func.isRequired
+    actions: PropTypes.func,
   };
 
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value1: "",
-      value2: ""
+      value1: '',
+      value2: ''
     };
   }
 
@@ -36,11 +36,11 @@ export default class InfoGraph extends Component {
     //debugger
     //event.target.value
     //event.target.name
-    this.setState({[event.target.name]: event.target.value});
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   gotoInforGraph() {
-    var data = {
+    const data = {
       value1: this.state.value1,
       value2: this.state.value2
     };
@@ -51,14 +51,16 @@ export default class InfoGraph extends Component {
   render() {
     return (
       <div className={style.main}>
-        <div style={{textAlign: "center"}}>
-          <div style={{padding: "10px 0"}}>
+        <InfoField title="Company Logo:" type="rep" />
+        <InfoField title="Prospect's Logo:" type="prospect" />
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ padding: '10px 0' }}>
             <span>Value 1: </span>
-            <input type="text" value={this.state.value1} onChange={(event) => this.onChangeValue(event)} name="value1" />
+            <input type="text" value={this.state.value1} onChange={event => this.onChangeValue(event)} name="value1" />
           </div>
-          <div style={{padding: "10px 0"}}>
+          <div style={{ padding: '10px 0' }}>
             <span>Value 1: </span>
-            <input type="text" value={this.state.value2} onChange={(event) => this.onChangeValue(event)} name="value2" />
+            <input type="text" value={this.state.value2} onChange={event => this.onChangeValue(event)} name="value2" />
           </div>
         </div>
         <div className={style.submitmain}>
