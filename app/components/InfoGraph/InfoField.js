@@ -19,13 +19,16 @@ export default class InfoField extends Component {
     };
   }
 
-  renderIcon(type) {
+  renderIcon = (type) => {
     let icon = '';
     if (type === 'rep') {
       icon = 'address-book';
     } else if (type === 'prospect') {
       icon = 'address-book';
     }
+    return (
+      <FontAwesomeIcon icon={icon} />
+    );
   }
 
   render() {
@@ -33,7 +36,7 @@ export default class InfoField extends Component {
 
     return (
       <div className={style.main}>
-        <FontAwesomeIcon icon={icon} />
+        { this.renderIcon(type) }
         <span>{ title }</span>
       </div>
     );
