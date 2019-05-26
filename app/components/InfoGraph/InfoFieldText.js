@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import classnames from 'classnames';
-import style from './InfoField.css';
+import style from './InfoFieldText.css';
 
 export default class InfoField extends Component {
 
@@ -21,9 +21,9 @@ export default class InfoField extends Component {
 
   renderIcon = (type) => {
     let icon = '';
-    if (type === 'rep') {
+    if (type === 'prospect-first-name') {
       icon = 'address-book';
-    } else if (type === 'prospect') {
+    } else if (type === 'text') {
       icon = 'address-book';
     }
     return (
@@ -38,6 +38,7 @@ export default class InfoField extends Component {
       <div className={style.main}>
         { this.renderIcon(type) }
         <span>{ title }</span>
+        <input type="text" />
       </div>
     );
   }

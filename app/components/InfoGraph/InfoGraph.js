@@ -2,9 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import classnames from 'classnames';
-import InfoField from './InfoField';
+import InfoFieldImage from './InfoFieldImage';
+import InfoFieldText from './InfoFieldText';
+import InfoFieldTextOrImage from './InfoFieldTextOrImage';
 // import SubmitButton from './SubmitButton';
-import style from './InfoField.css';
+import style from './InfoGraph.css';
 import * as RouteAction from '../../actions/routes';
 
 @connect(
@@ -51,8 +53,22 @@ export default class InfoGraph extends Component {
   render() {
     return (
       <div className={style.main}>
-        <InfoField title="Company Logo:" type="rep" />
-        <InfoField title="Prospect's Logo:" type="prospect" />
+        <div>
+          A trade-off analysis is a business decision
+          that involves losing one area in return for gains in another area.
+          In simple terms, a tradeoff is where
+          because one business consideration increases another consideration must decrease.
+        </div>
+        <InfoFieldImage title="Company Logo:" type="rep" />
+        <InfoFieldImage title="Prospect's Logo:" type="prospect" />
+        <InfoFieldText title="Prospect's First Name:" type="prospect-first-name" />
+        <InfoFieldText title="Text:" type="text" />
+        <InfoFieldText title="Text:" type="text" />
+        <InfoFieldText title="Chart: Business Consideration No. 1: " type="text" />
+        <InfoFieldText title="Chart: Business Consideration No. 2: " type="text" />
+        <InfoFieldText title="Text:" type="text" />
+        <InfoFieldTextOrImage title="Product:" type="text" />
+        <InfoFieldText title="Text:" type="text" />
         <div style={{ textAlign: 'center' }}>
           <div style={{ padding: '10px 0' }}>
             <span>Value 1: </span>
