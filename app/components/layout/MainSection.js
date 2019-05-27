@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TodoItem from './TodoItem';
-import Footer from './Footer';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters';
 import style from './MainSection.css';
 
 const TODO_FILTERS = {
@@ -33,32 +32,19 @@ export default class MainSection extends Component {
     this.setState({ filter });
   };
 
-  renderToggleAll(completedCount) {
-    // const { todos, actions } = this.props;
-  }
-
-  renderFooter(completedCount) {
-  }
-
   render() {
     const { todos, actions } = this.props;
     const { filter } = this.state;
 
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
-    const completedCount = todos.reduce(
-      (count, todo) => (todo.completed ? count + 1 : count),
-      0
-    );
 
     return (
       <section className={style.main}>
-        {this.renderToggleAll(completedCount)}
         <ul className={style.todoList}>
           {filteredTodos.map(todo =>
             <TodoItem key={todo.id} todo={todo} {...actions} />
           )}
         </ul>
-        {this.renderFooter(completedCount)}
       </section>
     );
   }

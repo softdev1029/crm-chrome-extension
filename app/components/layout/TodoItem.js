@@ -1,15 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import style from './TodoItem.css';
-import InfoGraph from './InfoGraph/InfoGraph';
+import TradeOff from '../category/TradeOff';
 
 export default class TodoItem extends Component {
 
   static propTypes = {
     todo: PropTypes.object.isRequired,
-    editTodo: PropTypes.func.isRequired,
-    deleteTodo: PropTypes.func.isRequired,
-    completeTodo: PropTypes.func.isRequired
   };
 
   constructor(props, context) {
@@ -42,7 +39,7 @@ export default class TodoItem extends Component {
           </label>
         </div>
         {
-          editing && <InfoGraph />
+          editing && <TradeOff />
         }
       </li>
     );

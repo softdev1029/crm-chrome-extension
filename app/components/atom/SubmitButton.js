@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 // import classnames from 'classnames';
 import style from './SubmitButton.css';
 import * as RouteAction from '../../actions/routes';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 @connect(
   state => ({
@@ -16,9 +16,7 @@ import { connect } from 'react-redux';
 export default class SubmitButton extends Component {
 
   static propTypes = {
-    infoGraph: PropTypes.object.isRequired,
-    // editInfoGraph: PropTypes.func.isRequired,
-    // completeInfoGraph: PropTypes.func.isRequired
+    actions: PropTypes.func.isRequired,
   };
 
   constructor(props, context) {
@@ -28,8 +26,8 @@ export default class SubmitButton extends Component {
   }
 
   render() {
-    const { actions, routes } = this.props;
-    
+    const { actions, } = this.props;
+
     return (
       <div className={style.main}>
         <button className={style.submit} onClick={() => actions.gotoInfoGraph()} name="Submit">Submit</button>

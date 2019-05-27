@@ -14,8 +14,8 @@
 .normal label:before {
   content: " ";
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   float: left;
   margin: 6px 16px 0 0;
 

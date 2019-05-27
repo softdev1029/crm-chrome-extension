@@ -2,15 +2,21 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
-import Header from '../components/Header';
-import MainSection from '../components/MainSection';
+import { faAddressBook, faChartLine, faSocks, faBuilding, faBook, faCity, faLandmark, faClipboard } from '@fortawesome/free-solid-svg-icons';
+import Header from '../components/layout/Header';
+import MainSection from '../components/layout/MainSection';
 import * as TodoActions from '../actions/todos';
 import style from './App.css';
 import InfoGraphView from '../components/InfoGraph/infographView';
 
-library.add(faStroopwafel);
 library.add(faAddressBook);
+library.add(faChartLine);
+library.add(faSocks);
+library.add(faBuilding);
+library.add(faBook);
+library.add(faCity);
+library.add(faLandmark);
+library.add(faClipboard);
 
 @connect(
   state => ({

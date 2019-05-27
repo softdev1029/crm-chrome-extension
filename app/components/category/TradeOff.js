@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import classnames from 'classnames';
-import InfoFieldImage from './InfoFieldImage';
-import InfoFieldText from './InfoFieldText';
-import InfoFieldTextOrImage from './InfoFieldTextOrImage';
+import InfoFieldImage from '../field/FieldImage';
+import InfoFieldText from '../field/FieldText';
+import InfoFieldTextOrImage from '../field/FieldTextOrImage';
 // import SubmitButton from './SubmitButton';
-import style from './InfoGraph.css';
+import style from './TradeOff.css';
 import * as RouteAction from '../../actions/routes';
 
 @connect(
@@ -17,7 +17,7 @@ import * as RouteAction from '../../actions/routes';
     actions: bindActionCreators(RouteAction, dispatch)
   })
 )
-export default class InfoGraph extends Component {
+export default class TradeOff extends Component {
 
   static propTypes = {
     // infoGraph: PropTypes.object.isRequired,
@@ -53,22 +53,35 @@ export default class InfoGraph extends Component {
   render() {
     return (
       <div className={style.main}>
-        <div>
+        <div className={style.head}>
           A trade-off analysis is a business decision
           that involves losing one area in return for gains in another area.
           In simple terms, a tradeoff is where
           because one business consideration increases another consideration must decrease.
         </div>
-        <InfoFieldImage title="Company Logo:" type="rep" />
-        <InfoFieldImage title="Prospect's Logo:" type="prospect" />
-        <InfoFieldText title="Prospect's First Name:" type="prospect-first-name" />
-        <InfoFieldText title="Text:" type="text" />
-        <InfoFieldText title="Text:" type="text" />
-        <InfoFieldText title="Chart: Business Consideration No. 1: " type="text" />
-        <InfoFieldText title="Chart: Business Consideration No. 2: " type="text" />
-        <InfoFieldText title="Text:" type="text" />
-        <InfoFieldTextOrImage title="Product:" type="text" />
-        <InfoFieldText title="Text:" type="text" />
+
+        {/* Company Logo */}
+        <InfoFieldImage title="Company Logo:" icon="building" />
+
+        {/* Prospect Logo */}
+        <InfoFieldImage title="Prospect's Logo:" icon="landmark" />
+
+        {/* Prospect First Name */}
+        <InfoFieldText title="Prospect's First Name:" icon="address-book" />
+
+        {/* Explanation Sentence */}
+        <InfoFieldText title="Text:" icon="book" value="A trade-off analysis ..." />
+        <InfoFieldText title="Text:" icon="book" value="Based on our understanding of your business situation, you face competing business challenges" />
+
+        {/* Chart Values */}
+        <InfoFieldText title="Consideration No. 1: " icon="chart-line" />
+        <InfoFieldText title="Consideration No. 2: " icon="chart-line" />
+
+        {/* Explanation Sentence */}
+        <InfoFieldText title="Text:" icon="clipboard" value="Both of these values are competing for resource in your business" />
+        <InfoFieldTextOrImage title="Product:" icon="socks" />
+        <InfoFieldText title="Text:" icon="clipboard" value="can assist you by" />
+
         <div style={{ textAlign: 'center' }}>
           <div style={{ padding: '10px 0' }}>
             <span>Value 1: </span>

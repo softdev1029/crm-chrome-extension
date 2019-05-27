@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import classnames from 'classnames';
-import style from './InfoFieldText.css';
+import style from './FieldText.css';
+import TextBox from '../atom/TextBox';
+import LabelBox from '../atom/LabelBox';
 
 export default class InfoField extends Component {
 
@@ -10,7 +12,8 @@ export default class InfoField extends Component {
     // editInfoGraph: PropTypes.func.isRequired,
     // completeInfoGraph: PropTypes.func.isRequired
     title: PropTypes.object.isRequired,
-    type: PropTypes.object.isRequired,
+    icon: PropTypes.object.isRequired,
+    value: PropTypes.object.isRequired,
   };
 
   constructor(props, context) {
@@ -19,26 +22,14 @@ export default class InfoField extends Component {
     };
   }
 
-  renderIcon = (type) => {
-    let icon = '';
-    if (type === 'prospect-first-name') {
-      icon = 'address-book';
-    } else if (type === 'text') {
-      icon = 'address-book';
-    }
-    return (
-      <FontAwesomeIcon icon={icon} />
-    );
-  }
-
   render() {
-    const { title, type } = this.props;
+    const { title, icon, value } = this.props;
 
     return (
       <div className={style.main}>
-        { this.renderIcon(type) }
-        <span>{ title }</span>
-        <input type="text" />
+        <FontAwesomeIcon icon={icon} />
+        <LabelBox className={style.title} value={title} />
+        <TextBox value={value} />
       </div>
     );
   }
