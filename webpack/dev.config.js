@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer');
 const host = 'localhost';
 const port = 3000;
 const customPath = path.join(__dirname, './customPublicPath');
+const styleBasePath = path.join(__dirname, '../app/styles');
 const hotScript = 'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true';
 
 const baseDevConfig = () => ({
@@ -61,6 +62,28 @@ const baseDevConfig = () => ({
           loader: 'postcss-loader',
           options: {
             plugins: () => [autoprefixer]
+          }
+        }
+      ]
+    }, {
+      test: /\.(scss|sass)$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'typings-for-css-modules-loader',
+          options: {
+            namedExport: true,
+            camelCase: true,
+            sourceMap: true,
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[name]__[local]___[hash:base64:5]'
+          }
+        },
+        {
+          loader: require.resolve('sass-loader'),
+          options: {
+            includePaths: [styleBasePath]
           }
         }
       ]

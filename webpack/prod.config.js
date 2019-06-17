@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 const customPath = path.join(__dirname, './customPublicPath');
+const styleBasePath = path.join(__dirname, '../app/styles');
 
 module.exports = {
   entry: {
@@ -50,6 +51,28 @@ module.exports = {
           loader: 'postcss-loader',
           options: {
             plugins: () => [autoprefixer]
+          }
+        }
+      ]
+    }, {
+      test: /\.(scss|sass)$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'typings-for-css-modules-loader',
+          options: {
+            namedExport: true,
+            camelCase: true,
+            sourceMap: true,
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[name]__[local]___[hash:base64:5]'
+          }
+        },
+        {
+          loader: require.resolve('sass-loader'),
+          options: {
+            includePaths: [styleBasePath]
           }
         }
       ]
