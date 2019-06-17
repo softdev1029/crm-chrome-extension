@@ -18,16 +18,7 @@ library.add(faCity);
 library.add(faLandmark);
 library.add(faClipboard);
 
-@connect(
-  state => ({
-    todos: state.todos,
-    routes: state.routes
-  }),
-  dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
-  })
-)
-export default class App extends Component {
+class App extends Component {
 
   static propTypes = {
     todos: PropTypes.array.isRequired,
@@ -50,3 +41,13 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({
+    todos: state.todos,
+    routes: state.routes
+  }),
+  dispatch => ({
+    actions: bindActionCreators(TodoActions, dispatch)
+  })
+)(App);
