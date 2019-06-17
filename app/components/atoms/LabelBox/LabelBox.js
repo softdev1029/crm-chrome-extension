@@ -1,17 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import style from './LabelBox.css';
-import * as RouteAction from '../../actions/routes';
 
-@connect(
-  state => ({
-    routes: state.routes
-  }),
-  dispatch => ({
-    actions: bindActionCreators(RouteAction, dispatch)
-  })
-)
 export default class LabelBox extends Component {
 
   static propTypes = {

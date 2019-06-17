@@ -3,17 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import classnames from 'classnames';
 import style from './SubmitButton.css';
-import * as RouteAction from '../../actions/routes';
+import * as RouteAction from '../../../actions/routes';
 
-@connect(
-  state => ({
-    routes: state.routes
-  }),
-  dispatch => ({
-    actions: bindActionCreators(RouteAction, dispatch)
-  })
-)
-export default class SubmitButton extends Component {
+class SubmitButton extends Component {
 
   static propTypes = {
     actions: PropTypes.func.isRequired,
@@ -35,3 +27,12 @@ export default class SubmitButton extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({
+    routes: state.routes
+  }),
+  dispatch => ({
+    actions: bindActionCreators(RouteAction, dispatch)
+  })
+)(SubmitButton);

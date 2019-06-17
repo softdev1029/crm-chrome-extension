@@ -1,0 +1,23 @@
+@function z-index-for($key) {
+  @return map-get($z-indexes, $key);
+}
+
+@function background-color-for($key) {
+  @return map-get($background-colors, $key);
+}
+
+@function text-color-for($key) {
+  @return map-get($text-colors, $key);
+}
+
+@function button-color-for($key) {
+  @return map-get($button-colors, $key);
+}
+
+@function border-color-for($key) {
+  @return map-get($border-colors, $key);
+}
+
+@function color-for($key) {
+  @return map-get($colors, $key);
+}

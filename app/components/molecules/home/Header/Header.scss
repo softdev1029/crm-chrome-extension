@@ -1,0 +1,43 @@
+@import 'utils';
+
+.img {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 37px;
+  padding-top: 15px;
+}
+
+.credit_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.credit_num {
+  font-size: 2.2em;
+}
+
+.credit_num_suffix {
+  font-size: 1em;
+  margin-left: 4px;
+}
+
+.credit_add {
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: #0077D1 solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.credit_add:hover {
+  filter: alpha(opacity=90);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}

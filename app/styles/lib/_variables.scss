@@ -1,0 +1,159 @@
+$breakpoints: (
+  small: 376px,
+  mediumsmall: 480px,
+  bigsmall: 600px,
+  smallmedium: 720px,
+  medium: 768px,
+  bigmedium: 960px,
+  large: 1024px,
+  biglarge: 1300px,
+  huge: 1600px,
+  bighuge: 2049px,
+  superhuge: 2560px
+);
+
+$z-indexes: (
+  'sidebar': 1000,
+  'topbar': 900,
+  'content': 800,
+  'menu': 700,
+  'asset': 600,
+  'pagination': 500,
+  'table': 400
+);
+
+$background-color: #0086fc;
+
+$background-colors: (
+  'blue': $background-color,
+  'blue-normal': #0086fc,
+  'blue-hover': #006dde,
+  'blue-active': #0055c1,
+  'green-normal': #0ebe4a,
+  'green-hover': #00a330,
+  'green-active': #00870e,
+  'brightgreen': #70c454,
+  'darkgreen': #00aa3e,
+  'iceblue': #f2f9ff,
+  'iceblue-active': #dceffc,
+  'white': white,
+  'lightgray': #eee,
+  'darkgray': #2f2f2f,
+  'darkgray1': #a3a3a3,
+  'darkgray2': #aaaaaa,
+  'smoothgray': #555,
+  'gray': #888,
+  'white-hover': #cae6ff,
+  'brightblue': #c9e3f8,
+  'bright-blue1': #e5f3ff,
+  'light-sage': #f1fbf4,
+  'light-sage1': #fdf0f5,
+  'light-gray1': #fafafa,
+  'light-gray2': #e8e8e8,
+  'light-gray3': #dfdfdf,
+  'light-gray4': #cacaca,
+  'light-gray5': #eeeeee,
+  'lightblue-hover': #cae6ff,
+  'red': #e30250,
+  'light-red': #fedbdf,
+  'bright-red': #ff3d4b
+);
+
+$button-colors: (
+  'blue-normal': #0086fc,
+  'blue-hover': #006dde,
+  'blue-active': #0055c1,
+  'green-normal': #0ebe4a,
+  'green-hover': #00a330,
+  'green-active': #00870e,
+  'white': white,
+  'white-hover': #cae6ff,
+  'gray': #c6c6c6
+);
+
+$text-colors: (
+  'darkgray': #2f2f2f,
+  'darkgray1': #262626,
+  'darkgray2': #393939,
+  'darkgray3': #a3a3a3,
+  'darkgray4': #292929,
+  'darkgray5': #282828,
+  'smoothgray': #555,
+  'smoothgray1': #505050,
+  'smoothgray2': #626262,
+  'gray': #7a7a7a,
+  'gray1': #747474,
+  'gray2': #a3a3a3,
+  'gray3': #848484,
+  // 'gray4': #898989,
+    'brightwhite': #fefefe,
+  'blue-normal': #0086fc,
+  'white': #ffffff,
+  'red': #e30250,
+  'red1': #fb4558,
+  'brightgreen1': #0ebe4a,
+  'green-normal': #00a330,
+  'green-hover': #0ebe4a,
+  'lightblue': #85c6ff
+);
+
+$border-colors: (
+  'blue-normal': #0086fc,
+  'blue-hover': #006dde,
+  'blue-active': #0055c1,
+  'green-normal': #00a330,
+  'green-hover': #0ebe4a,
+  'gray': #888888,
+  'lightgray': #bbb,
+  'darkgray1': #a3a3a3,
+  'gray1': #e8e8e8,
+  'white': #ffffff,
+  'lightblue': #85c6ff,
+  'lightgray1': #dcdcdc,
+  'lightgray2': #b0b0b0,
+  'lightgray3': #eaeaea,
+  'lightgray4': #efefef,
+  'red': #e30250
+);
+
+$colors: (
+  'black': #02022a,
+  'black2': #00001c,
+  'black3': #02022a,
+  'navy': #1e1e54,
+  'navy1': #313166,
+  'dusk': #4e5581,
+  'dark-blue-grey': #1e1e54,
+  'dark-blue-grey1': #060654,
+  'lipstick': #d91c5c,
+  'lipstick2': #a90039,
+  'lipstick3': #950032,
+  'lipstick4': #fbe9ef,
+  'green': #37b145,
+  'green2': #eaf7eb,
+  'medium-green': #37b145,
+  'yellow': #ffa300,
+  'grey': #f0f2f5,
+  'grey2': #e4e7eb,
+  'grey3': #b9bfc8,
+  'grey4': #eeeeee,
+  'grey5': #626262,
+  'grey6': #dddddd,
+  'grey7': #e6e9ed,
+  'grey8': #343a40,
+  'grey9': #495057,
+  'wisteria': #a4a3a9,
+  'wisteria2': #77767e,
+  'wisteria3': #7d7d87,
+  'wisteria4': #a5a8bc,
+  'wisteria5': #7f839f,
+  'wisteria6': #a5a5a7,
+  'wisteria7': #9499bb,
+  'wisteria8': #8181a6,
+  'wisteria9': #a5a5c3,
+  'greyish-brown': #404040,
+  'white': #ffffff,
+  'white2': #f0f2f5
+);
+
+$topbar-height: 80px;
