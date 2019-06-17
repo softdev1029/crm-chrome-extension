@@ -7,7 +7,7 @@ import Header from '../components/molecules/home/Header/Header';
 import MainSection from '../components/pages/home/MainSection';
 import * as TodoActions from '../actions/todos';
 import style from './App.css';
-import InfoGraphView from '../components/InfoGraph/infographView';
+import InfoGraphView from '../components/pages/tradeoff/infographView';
 
 library.add(faAddressBook);
 library.add(faChartLine);
