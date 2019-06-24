@@ -12,7 +12,7 @@ const initialState = [
     id: 1
   },
   {
-    text: 'Trade off Chart',
+    text: 'Opportunity Trade Off Analysis',
     completed: false,
     id: 2
   },
