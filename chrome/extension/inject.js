@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Dock from 'react-dock';
+import { moreButtonSellify } from './inject.scss';
 
 class InjectApp extends Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class InjectApp extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.buttonOnClick}>
-          Open TodoApp
+        <button onClick={this.buttonOnClick} className={moreButtonSellify}>
+          <img src="/assets/images/more.png" alt="" />
         </button>
         <Dock
           position="right"
