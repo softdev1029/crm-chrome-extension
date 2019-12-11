@@ -1,13 +1,19 @@
 .more-button-sellify {
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 200px;
-    background-color: white;
+    top: 20px;
+    right: 90px;
     padding: 0;
     background-color: transparent;
+    border-style: none;   
 
-    img {
+    img.ex-more {
+        position: fixed;
         width: 56px;
+        height: 56px;
+        z-index: 1000;
     }
+}
+
+.more-button-sellify.active {
+    right: calc(40% + 80px);
 }

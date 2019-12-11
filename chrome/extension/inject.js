@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Dock from 'react-dock';
-import { moreButtonSellify } from './inject.scss';
+import styles from './inject.scss';
 
 class InjectApp extends Component {
   constructor(props) {
@@ -14,21 +14,34 @@ class InjectApp extends Component {
   };
 
   render() {
+    console.log(styles);
+    const moreImgPath = chrome.extension.getURL('img/more.png');
+    const dockStyle = { right: '20px', top: '20px', height: '70%', maxWidth: 'calc(40% - 20px)' };
+
+    let moreButtonClass = styles.moreButtonSellify;
+
+    if (this.state.isVisible) {
+      moreButtonClass += ` ${styles.active}`;
+    }
+
     return (
       <div>
-        <button onClick={this.buttonOnClick} className={moreButtonSellify}>
-          <img src="/assets/images/more.png" alt="" />
+        <button onClick={this.buttonOnClick} className={moreButtonClass}>
+          <img src={moreImgPath} alt="more" className={styles.exMore} />
         </button>
         <Dock
           position="right"
           dimMode="transparent"
-          defaultSize={0.4}
           isVisible={this.state.isVisible}
+          defaultSize={0.4}
+          dockStyle={dockStyle}
+          fluid="false"
+          isControlled={false}
         >
           <iframe
             style={{
               width: '100%',
-              height: '100%',
+              height: 'calc(100% - 5px)',
             }}
             frameBorder={0}
             allowTransparency="true"
