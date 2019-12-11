@@ -14,7 +14,6 @@ class InjectApp extends Component {
   };
 
   render() {
-    console.log(styles);
     const moreImgPath = chrome.extension.getURL('img/more.png');
     const dockStyle = { right: '20px', top: '20px', height: '70%', maxWidth: 'calc(40% - 20px)' };
 

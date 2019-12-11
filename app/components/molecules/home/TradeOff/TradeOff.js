@@ -1,11 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-// import classnames from 'classnames';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import InfoFieldImage from '../../../molecules/common/FieldImage/FieldImage';
 import InfoFieldText from '../../../molecules/common/FieldText/FieldText';
 import InfoFieldTextOrImage from '../../common/FieldTextOrImage/FieldTextOrImage';
 import style from './TradeOff.css';
+import * as RouteAction from '../../../../actions/routes';
 
-export default class TradeOff extends Component {
+class TradeOff extends Component {
 
   static propTypes = {
     // infoGraph: PropTypes.object.isRequired,
@@ -86,3 +89,12 @@ export default class TradeOff extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({
+    routes: state.routes
+  }),
+  dispatch => ({
+    actions: bindActionCreators(RouteAction, dispatch)
+  })
+)(TradeOff);

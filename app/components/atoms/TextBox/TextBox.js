@@ -1,7 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import style from './TextBox.css';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-export default class TextBox extends Component {
+import style from './TextBox.css';
+import * as RouteAction from '../../../actions/routes';
+
+class TextBox extends Component {
 
   static propTypes = {
     value: PropTypes.string,
@@ -21,3 +25,12 @@ export default class TextBox extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({
+    routes: state.routes
+  }),
+  dispatch => ({
+    actions: bindActionCreators(RouteAction, dispatch)
+  })
+)(TextBox);
