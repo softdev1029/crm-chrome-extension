@@ -1,7 +1,7 @@
 .more-button-sellify {
     position: fixed;
     top: 20px;
-    right: 90px;
+    right: 70px;
     padding: 0;
     background-color: transparent;
     border-style: none;   
@@ -15,5 +15,5 @@
 }
 
 .more-button-sellify.active {
-    right: calc(40% + 80px);
+    display: none;
 }

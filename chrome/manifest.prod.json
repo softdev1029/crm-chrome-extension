@@ -14,7 +14,7 @@
   },
   "web_accessible_resources": [
     "inject.html",
-    "img/more.png"
+    "img/Sellify-icon.png"
   ],
   "background": {
     "page": "background.html"

@@ -14,9 +14,7 @@ class InjectApp extends Component {
   };
 
   render() {
-    const moreImgPath = chrome.extension.getURL('img/more.png');
-    const dockStyle = { right: '20px', top: '20px', height: '70%', maxWidth: 'calc(40% - 20px)' };
-
+    const moreImgPath = chrome.extension.getURL('img/Sellify-icon.png');
     let moreButtonClass = styles.moreButtonSellify;
 
     if (this.state.isVisible) {
@@ -33,7 +31,6 @@ class InjectApp extends Component {
           dimMode="transparent"
           isVisible={this.state.isVisible}
           defaultSize={0.4}
-          dockStyle={dockStyle}
           fluid="false"
           isControlled={false}
         >
