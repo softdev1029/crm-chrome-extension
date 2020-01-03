@@ -1,4 +1,6 @@
 export const img: string;
+export const headerCredit: string;
+export const headerDiv: string;
 export const credit_box: string;
 export const creditBox: string;
 export const credit_num: string;

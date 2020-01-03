@@ -2,10 +2,23 @@
 
 .img {
   display: block;
-  margin: auto;
   width: 100px;
+  margin-left: 10px;
   height: 37px;
   padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.header-credit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px;
+}
+
+.header-div {
+  background-color: #49BF5E;
+  position: relative;
 }
 
 .credit_box {

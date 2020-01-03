@@ -16,7 +16,12 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={style.img} />
+        <div className={style.headerDiv}>
+          <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={style.img} />
+          <div className={style.headerCredit}>
+            <img src={chrome.runtime.getURL('img/credit.png')} alt="sellify" className={style.img} />
+          </div>
+        </div>
         <div className={style.credit_box} >
           <h2 className={style.credit_num} >340</h2>
           <h2 className={style.credit_num_suffix} >CREDITS</h2>
