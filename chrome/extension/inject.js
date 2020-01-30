@@ -30,7 +30,7 @@ class InjectApp extends Component {
           position="right"
           dimMode="transparent"
           isVisible={this.state.isVisible}
-          defaultSize={0.4}
+          defaultSize={0.3}
           fluid="false"
           isControlled={false}
         >
