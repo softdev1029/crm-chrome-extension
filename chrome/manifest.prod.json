@@ -14,6 +14,7 @@
   },
   "web_accessible_resources": [
     "inject.html",
+    "sidebar.html",
     "img/Sellify-icon.png"
   ],
   "background": {

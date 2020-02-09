@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Dock from 'react-dock';
+import Root from '../../app/containers/Root';
 import styles from './inject.scss';
 
 class InjectApp extends Component {
@@ -20,7 +21,6 @@ class InjectApp extends Component {
     if (this.state.isVisible) {
       moreButtonClass += ` ${styles.active}`;
     }
-
     return (
       <div>
         <button onClick={this.buttonOnClick} className={moreButtonClass}>
@@ -28,7 +28,7 @@ class InjectApp extends Component {
         </button>
         <Dock
           position="right"
-          dimMode="transparent"
+          dimMode="none"
           isVisible={this.state.isVisible}
           defaultSize={0.3}
           fluid="false"
@@ -41,7 +41,7 @@ class InjectApp extends Component {
             }}
             frameBorder={0}
             allowTransparency="true"
-            src={chrome.extension.getURL(`inject.html?protocol=${location.protocol}`)}
+            src={chrome.extension.getURL(`sidebar.html?protocol=${location.protocol}`)}
           />
         </Dock>
       </div>

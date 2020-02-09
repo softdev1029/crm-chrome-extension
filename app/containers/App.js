@@ -19,23 +19,31 @@ library.add(faLandmark);
 library.add(faClipboard);
 
 class App extends Component {
-
   static propTypes = {
     todos: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired,
-    routes: PropTypes.object.isRequired
+    routes: PropTypes.object.isRequired,
+    isVisibleHeader: PropTypes.object.isRequired
   };
 
   render() {
-    const { todos, actions, routes } = this.props;
+    const { todos, actions, routes, isVisibleHeader } = this.props;
     let view = <MainSection todos={todos} actions={actions} />;
     if (routes.route === 'infograph') {
       view = <InfoGraphView />;
     }
 
+    if (isVisibleHeader === true) {
+      return (
+        <div className={style.normal}>
+          <Header addTodo={actions.addTodo} />
+          { view }
+        </div>
+      );
+    }
+
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
         { view }
       </div>
     );
@@ -45,7 +53,7 @@ class App extends Component {
 export default connect(
   state => ({
     todos: state.todos,
-    routes: state.routes
+    routes: state.routes,
   }),
   dispatch => ({
     actions: bindActionCreators(TodoActions, dispatch)

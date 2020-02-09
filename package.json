@@ -81,7 +81,7 @@
     "node-sass": "^4.12.0",
     "npm": "^6.9.0",
     "react": "^15.0.2",
-    "react-dock": "^0.2.3",
+    "react-dock": "maxdanielc/react-dock",
     "react-dom": "^15.0.2",
     "react-redux": "^4.3.0",
     "redux": "^3.2.1",
