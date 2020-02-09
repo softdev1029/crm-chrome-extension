@@ -15,7 +15,8 @@
   "web_accessible_resources": [
     "inject.html",
     "sidebar.html",
-    "img/Sellify-icon.png"
+    "img/dollar-icon.png",
+    "img/icon-sellify-logo.png"    
   ],
   "background": {
     "page": "background.html"

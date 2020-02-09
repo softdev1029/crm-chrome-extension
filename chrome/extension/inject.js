@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Dock from 'react-dock';
-import Root from '../../app/containers/Root';
 import styles from './inject.scss';
 
 class InjectApp extends Component {
@@ -15,7 +14,7 @@ class InjectApp extends Component {
   };
 
   render() {
-    const moreImgPath = chrome.extension.getURL('img/Sellify-icon.png');
+    const moreImgPath = chrome.extension.getURL('img/dollar-icon.png');
     let moreButtonClass = styles.moreButtonSellify;
 
     if (this.state.isVisible) {
@@ -34,10 +33,18 @@ class InjectApp extends Component {
           fluid="false"
           isControlled={false}
         >
+          <header>
+            <div className={styles.headerDiv}>
+              <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={styles.img} />
+              <div className={styles.headerCredit} onClick={this.buttonOnClick}>
+                <img src={chrome.runtime.getURL('img/close.svg')} alt="sellify" className={styles.imgClose} />
+              </div>
+            </div>
+          </header>
           <iframe
             style={{
               width: '100%',
-              height: 'calc(100% - 5px)',
+              height: '3000px'
             }}
             frameBorder={0}
             allowTransparency="true"
