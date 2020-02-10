@@ -4,12 +4,14 @@ html
   head
     meta(charset='UTF-8')
     title Sales Tool (Inject)
+    link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     style.
       html, body {
         background-color: #fff;
       }
   body
-    #root
-    if env !== 'prod'
-      script(src='chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js')
-    script(src=env == 'prod' ? '/js/sidebar.bundle.js' : 'https://localhost:3000/js/sidebar.bundle.js')
+  #root
+  if env !== 'prod'
+    script(src='chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js')
+  script(src=env == 'prod' ? '/js/sidebar.bundle.js' : 'http://localhost:3000/js/sidebar.bundle.js')

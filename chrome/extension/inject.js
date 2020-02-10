@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Dock from 'react-dock';
+import Dock from 'my-react-dock';
 import styles from './inject.scss';
 
 class InjectApp extends Component {
@@ -30,7 +30,6 @@ class InjectApp extends Component {
           dimMode="none"
           isVisible={this.state.isVisible}
           defaultSize={0.3}
-          fluid="false"
           isControlled={false}
         >
           <header>

@@ -12,8 +12,9 @@ const baseDevConfig = () => ({
   devtool: 'eval-cheap-module-source-map',
   entry: {
     todoapp: [customPath, hotScript, path.join(__dirname, '../chrome/extension/todoapp')],
-    sidebar: [customPath, path.join(__dirname, '../chrome/extension/sidebar')],
     background: [customPath, hotScript, path.join(__dirname, '../chrome/extension/background')],
+    sidebar: [customPath, hotScript, path.join(__dirname, '../chrome/extension/sidebar')],
+    inject: [customPath, hotScript, path.join(__dirname, '../chrome/extension/inject')]
   },
   devMiddleware: {
     publicPath: `http://${host}:${port}/js`,

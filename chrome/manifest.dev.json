@@ -16,7 +16,8 @@
     "inject.html",
     "sidebar.html",
     "img/dollar-icon.png",
-    "img/icon-sellify-logo.png"    
+    "img/icon-sellify-logo.png",
+    "img/close.svg"
   ],
   "background": {
     "page": "background.html"
