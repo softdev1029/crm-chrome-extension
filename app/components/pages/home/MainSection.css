@@ -2,12 +2,12 @@
   position: relative;
   z-index: 2;
   border-top: 1px solid #e6e6e6;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .todoList {
-  margin: 0;
+  margin: 15px, 0px, 0px, 0px;
   padding: 0;
   list-style: none;
 }
@@ -15,7 +15,6 @@
 .todoList li {
   position: relative;
   font-size: 14px;
-  border-bottom: 1px solid #ededed;
 }
 
 .todoList li:last-child {
@@ -63,8 +62,7 @@
 .todoList li label {
   white-space: pre-line;
   word-break: break-all;
-  padding: 15px 60px 15px 15px;
-  margin-left: 15px;
+  padding: 15px 0px;
   display: block;
   line-height: 1.2;
   transition: color 0.4s;
@@ -166,6 +164,7 @@
 .credit_num_suffix {
   font-size: 1em;
   margin-left: 4px;
+  color: #33475B;
 }
 
 .credit_add {

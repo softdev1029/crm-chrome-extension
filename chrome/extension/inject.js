@@ -36,7 +36,7 @@ class InjectApp extends Component {
             <div className={styles.headerDiv}>
               <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={styles.img} />
               <div className={styles.headerCredit} onClick={this.buttonOnClick}>
-                <img src={chrome.runtime.getURL('img/close.svg')} alt="sellify" className={styles.imgClose} />
+                <img src={chrome.runtime.getURL('img/close.png')} alt="sellify" className={styles.imgClose} />
               </div>
             </div>
           </header>

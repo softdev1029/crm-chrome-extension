@@ -37,6 +37,11 @@
     margin-right: auto;
     padding-top: 15px;
     padding-bottom: 15px;
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 0.85;
+    }
 }
 
 .header-credit {
