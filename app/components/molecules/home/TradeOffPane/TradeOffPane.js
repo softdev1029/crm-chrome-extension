@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import style from './MainItem.css';
+import style from './TradeOffPane.css';
+import TradeOff from '../TradeOff/TradeOff';
 
-export default class TodoItem extends Component {
+export default class TradeOffPane extends Component {
 
   static propTypes = {
     todo: PropTypes.object.isRequired,
@@ -37,6 +38,9 @@ export default class TodoItem extends Component {
             {todo.text}
           </label>
         </div>
+        {
+          editing && <TradeOff />
+        }
       </li>
     );
   }

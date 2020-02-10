@@ -1,0 +1,38 @@
+.normal .collapse label {
+    white-space: pre-line;
+    word-break: break-all;
+    padding: 15px 0px;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.4s;
+    color: #33475B;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .normal .collapse label:hover {
+    color: #007a8c;
+  }
+  
+  .normal .collapse label[data-status="true"]:before {
+    content: " ";
+    margin: 2px 16px 0 0;
+    transform: rotate(45deg);
+  }
+  .normal .collapse label:before {
+    content: " ";
+    display: block;
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin: 5px 16px 0 0;
+    color: #007a8c;
+  
+    box-sizing: border-box;
+    border-style: solid;
+    /* border-color: white; */
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(-45deg);
+    transition: border-width 150ms ease-in-out;
+  }
+  

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Button from '@material-ui/core/Button';
 import MainItem from '../../molecules/home/MainItem/MainItem';
+import TradeOffPane from '../../molecules/home/TradeOffPane/TradeOffPane';
 import style from './MainSection.css';
 
 export default class MainSection extends Component {
@@ -28,15 +29,19 @@ export default class MainSection extends Component {
       <div>
         <div className={style.credit_box}>
           <h2 className={style.credit_num_suffix}>Credits: 100</h2>
-          <Button variant="outlined" size="small" style={{ textTransform: 'none', color: '#007a8c', borderColor: '#007a8c' }}>
+          <Button variant="outlined" size="small" style={{ textTransform: 'none', color: '#007a8c', backgroundColor: '#eaf0f6', borderColor: '#007a8c' }}>
             Add credits
           </Button>
         </div>
         <section className={style.main}>
           <ul className={style.todoList}>
-            {todos.map(todo =>
-              <MainItem key={todo.id} todo={todo} {...actions} />
-            )}
+            {todos.map((todo) => {
+              if (todo.id !== 2) {
+                return (<MainItem key={todo.id} todo={todo} {...actions} />);
+              }
+
+              return (<TradeOffPane key={todo.id} todo={todo} {...actions} />);
+            })}
           </ul>
         </section>
       </div>

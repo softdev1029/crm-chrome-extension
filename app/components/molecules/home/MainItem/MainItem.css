@@ -1,7 +1,7 @@
-.normal label {
+.normal .collapse label {
   white-space: pre-line;
   word-break: break-all;
-  padding: 15px 15px;
+  padding: 15px 0px;
   display: block;
   line-height: 1.2;
   transition: color 0.4s;
@@ -10,16 +10,16 @@
   font-weight: bold;
 }
 
-.normal label:hover {
+.normal .collapse label:hover {
   color: #007a8c;
 }
 
-.normal label[data-status="true"]:before {
+.normal .collapse label[data-status="true"]:before {
   content: " ";
   margin: 2px 16px 0 0;
   transform: rotate(45deg);
 }
-.normal label:before {
+.normal .collapse label:before {
   content: " ";
   display: block;
   width: 8px;

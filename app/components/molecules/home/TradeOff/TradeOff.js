@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 import InfoFieldImage from '../../../molecules/common/FieldImage/FieldImage';
 import InfoFieldText from '../../../molecules/common/FieldText/FieldText';
@@ -42,6 +47,12 @@ class TradeOff extends Component {
   }
 
   render() {
+    const classes = makeStyles(theme => ({
+      margin: {
+        margin: theme.spacing(1),
+      },
+    }));
+
     return (
       <div className={style.main}>
         <div className={style.head}>
@@ -50,7 +61,6 @@ class TradeOff extends Component {
           In simple terms, a tradeoff is where
           because one business consideration increases another consideration must decrease.
         </div>
-
         {/* Company Logo */}
         <InfoFieldImage title="Company Logo:" icon="building" />
 
@@ -82,9 +92,25 @@ class TradeOff extends Component {
             <input type="text" value={this.state.value2} onChange={event => this.onChangeValue(event)} name="value2" />
           </div>
         </div>
-        <div className={style.submitmain}>
-          <button className={style.submit} onClick={() => this.gotoInforGraph()} name="Submit">Submit</button>
+        <div className={classes.margin}>
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <AccountCircle />
+            </Grid>
+            <Grid item>
+              <TextField id="input-with-icon-grid" label="With a grid" />
+            </Grid>
+          </Grid>
         </div>
+        <Button
+          variant="outlined"
+          size="small"
+          disableElevation
+          style={{ textTransform: 'none', color: '#007a8c', backgroundColor: '#eaf0f6', borderColor: '#007a8c' }}
+          onClick={() => this.gotoInforGraph()}
+        >
+          Submit
+        </Button>
       </div>
     );
   }

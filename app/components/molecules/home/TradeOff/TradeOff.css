@@ -4,6 +4,7 @@
 }
 
 .head {
-  font-style: italic;
+  text-align: justify;
   padding-bottom: 12px;
+  color: #33475B;
 }
