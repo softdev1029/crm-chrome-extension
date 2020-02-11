@@ -53,7 +53,7 @@ class InjectApp extends Component {
           <iframe
             style={{
               width: '100%',
-              height: '3000px'
+              height: 'calc(100% - 70px)'
             }}
             frameBorder={0}
             allowTransparency="true"

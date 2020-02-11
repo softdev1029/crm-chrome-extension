@@ -8,6 +8,20 @@ html
       html, body {
         background-color: #fff;
       }
+      html::-webkit-scrollbar {
+        width: 5px;
+      }
+      html::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+      html::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
   body
   #root
   if env !== 'prod'

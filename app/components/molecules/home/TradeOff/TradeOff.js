@@ -14,7 +14,7 @@ import * as RouteAction from '../../../../actions/routes';
 const SellifyTextField = withStyles({
   root: {
     '&': {
-      width: '210px'
+      width: '205px'
     },
     '& label': {
       fontSize: '14px'
