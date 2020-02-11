@@ -3,15 +3,47 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import { AccountCircle, Description, InsertChart, Work, Business, WbIncandescent, PhotoCamera } from '@material-ui/icons';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
 
-import InfoFieldImage from '../../../molecules/common/FieldImage/FieldImage';
-import InfoFieldText from '../../../molecules/common/FieldText/FieldText';
-import InfoFieldTextOrImage from '../../common/FieldTextOrImage/FieldTextOrImage';
 import style from './TradeOff.css';
 import * as RouteAction from '../../../../actions/routes';
+
+const SellifyTextField = withStyles({
+  root: {
+    '&': {
+      width: '210px'
+    },
+    '& label': {
+      fontSize: '14px'
+    },
+    '& label.Mui-focused': {
+      color: '#007a8c',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#007a8c',
+    },
+    '& input': {
+      fontSize: '14px',
+    },
+    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+      borderBottom: '2px solid #33475BDE',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#007a8c',
+      },
+    },
+  },
+})(TextField);
 
 class TradeOff extends Component {
 
@@ -49,7 +81,7 @@ class TradeOff extends Component {
   render() {
     const classes = makeStyles(theme => ({
       margin: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(1)
       },
     }));
 
@@ -61,44 +93,96 @@ class TradeOff extends Component {
           In simple terms, a tradeoff is where
           because one business consideration increases another consideration must decrease.
         </div>
-        {/* Company Logo */}
-        <InfoFieldImage title="Company Logo:" icon="building" />
-
-        {/* Prospect Logo */}
-        <InfoFieldImage title="Prospect's Logo:" icon="landmark" />
-
-        {/* Prospect First Name */}
-        <InfoFieldText title="Prospect's First Name:" icon="address-book" />
-
-        {/* Explanation Sentence */}
-        <InfoFieldText title="Text:" icon="book" value="Based on our understanding of your business situation, we have developed a trade off analysis to illustrate the business decisions you make in area A impact area B. A return in one area involves a potential cost in another area. You face competing business challenges:" />
-
-        {/* Chart Values */}
-        <InfoFieldText title="Consideration No. 1: " icon="chart-line" />
-        <InfoFieldText title="Consideration No. 2: " icon="chart-line" />
-
-        {/* Explanation Sentence */}
-        <InfoFieldText title="Text:" icon="clipboard" value="Both of these values are competing for resource in your business" />
-        <InfoFieldTextOrImage title="Product:" icon="socks" />
-        <InfoFieldText title="Text:" icon="clipboard" value="can assist you by" />
-
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ padding: '10px 0' }}>
-            <span>Value 1: </span>
-            <input type="text" value={this.state.value1} onChange={event => this.onChangeValue(event)} name="value1" />
-          </div>
-          <div style={{ padding: '10px 0' }}>
-            <span>Value 1: </span>
-            <input type="text" value={this.state.value2} onChange={event => this.onChangeValue(event)} name="value2" />
-          </div>
-        </div>
-        <div className={classes.margin}>
+        <div className={classes.margin} style={{ marginTop: '10px' }}>
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
-              <AccountCircle />
+              <WbIncandescent size="small" />
+            </Grid>
+            <Grid item style={{ position: 'relative' }}>
+              <span className={style.head}>Prospect&apos;s logo</span>
+              <IconButton
+                color="primary"
+                aria-label="upload picture"
+                component="span"
+                size="small"
+                style={{ color: '#007a8c' }}
+              >
+                <PhotoCamera />
+              </IconButton>
+              <input
+                type="file"
+                style={{ opacity: '0', width: '30px', height: '30px', position: 'absolute', right: '5px' }}
+              />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <AccountCircle size="small" />
             </Grid>
             <Grid item>
-              <TextField id="input-with-icon-grid" label="With a grid" />
+              <SellifyTextField id="input-with-icon-grid" label="Prospect's first name" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <Description size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <Description size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <InsertChart size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Business Consideration No.1" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <InsertChart size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Business Consideration No.2" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <Work size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Production" size="small" />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.margin} style={{ marginBottom: '10px' }} >
+          <Grid container spacing={1} alignItems="flex-end">
+            <Grid item>
+              <Description size="small" />
+            </Grid>
+            <Grid item>
+              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
             </Grid>
           </Grid>
         </div>

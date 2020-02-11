@@ -44,11 +44,16 @@
     }
 }
 
-.header-credit {
+.header-go-out {
     position: absolute;
     right: 0;
-    top: 0;
-    width: 50px;
+    top: calc(50% - 12px);
+}
+
+.header-setting {
+    position: absolute;
+    right: 30px;
+    top: calc(50% - 12px);
 }
 
 .header-div {

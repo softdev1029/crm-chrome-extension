@@ -185,9 +185,7 @@ Because these are competing values, your challenge is to choose a balance betwee
             <div style={gtdivinner}>
               <label style={{ position: "absolute", left: "-52px" }}>{routes.formvalues.val1}</label>
               <label style={{ position: "absolute", right: "-52px", bottom: "0" }}>{routes.formvalues.val2}</label>
-              <input accept="image/*" ref={(i) => this.filei1 = i} onChange={(event) => this.loadFile(event, 1)} style={{ position: "absolute", top: "150px", left: "-70px" }} type="file" id="file1" title="Logo 1" />
               <img id="output1" style={img1s} ref={(c) => this.outputd1 = c} />
-              <input accept="image/*" ref={(i) => this.filei2 = i} onChange={(event) => this.loadFile(event, 2)} style={{ position: "absolute", right: "-60px", zIndex: "999999" }} type="file" id="file2" title="Logo 2" />
               <img id="output2" style={img2s} ref={(c) => this.outputd2 = c} />
               <div style={rbddiv}></div>
               <div style={gtddiv1}></div>

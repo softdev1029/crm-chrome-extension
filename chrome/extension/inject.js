@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import IconButton from '@material-ui/core/IconButton';
+import { ArrowForwardIos } from '@material-ui/icons';
 import Dock from 'my-react-dock';
 import styles from './inject.scss';
 
@@ -14,7 +16,6 @@ class InjectApp extends Component {
   };
 
   render() {
-    const moreImgPath = chrome.extension.getURL('img/dollar-icon.png');
     let moreButtonClass = styles.moreButtonSellify;
 
     if (this.state.isVisible) {
@@ -23,7 +24,7 @@ class InjectApp extends Component {
     return (
       <div>
         <button onClick={this.buttonOnClick} className={moreButtonClass}>
-          <img src={moreImgPath} alt="more" className={styles.exMore} />
+          <img src={chrome.extension.getURL('img/dollar-icon.png')} alt="more" className={styles.exMore} />
         </button>
         <Dock
           position="right"
@@ -35,8 +36,17 @@ class InjectApp extends Component {
           <header>
             <div className={styles.headerDiv}>
               <img src={chrome.runtime.getURL('img/icon-sellify-logo.png')} alt="sellify" className={styles.img} />
-              <div className={styles.headerCredit} onClick={this.buttonOnClick}>
-                <img src={chrome.runtime.getURL('img/close.png')} alt="sellify" className={styles.imgClose} />
+              <div className={styles.headerGoOut} onClick={this.buttonOnClick}>
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="span"
+                  size="small"
+                  style={{ color: '#007a8c' }}
+                  title="Close the panel"
+                >
+                  <ArrowForwardIos />
+                </IconButton>
               </div>
             </div>
           </header>

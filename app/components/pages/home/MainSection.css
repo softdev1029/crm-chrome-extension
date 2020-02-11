@@ -152,10 +152,16 @@
   font-size: 2.2em;
 }
 
+.credit_num_suffix_bold {
+  font-size: 1em;
+  font-weight: bold;
+  color: #33475B;
+}
+
 .credit_num_suffix {
   font-size: 1em;
-  margin-left: 4px;
   color: #33475B;
+  font-weight: normal;
 }
 
 .credit_add {
@@ -174,4 +180,12 @@
 .credit_add:hover {
   filter: alpha(opacity=90);
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+
+.hideMore {
+  display: none !important;
+}
+
+.showMore {
+  
 }
