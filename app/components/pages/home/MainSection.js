@@ -63,7 +63,7 @@ export default class MainSection extends Component {
           <Link href="#" size="small" onClick={this.seeMore} className={more} style={{ color: '#007a8c', marginTop: '5px', fontSize: '12px', display: 'block', marginBottom: '5px' }}>
             See more
           </Link>
-          <h2 className={[style.credit_num_suffix_bold, rest].join(' ')} >dronluder@sellify.com</h2>
+          <h2 className={[style.credit_num_suffix_bold, rest].join(' ')} >doronluder@sellify.com</h2>
           <Avatar alt="Your face" src={chrome.runtime.getURL('img/user.jpg')} className={rest} style={{ marginLeft: 'auto', marginRight: 'auto', width: '60px', height: '60px' }} />
           <h2 className={[style.credit_num_suffix, rest].join(' ')} >Company: Sellify</h2>
           <h2 className={[style.credit_num_suffix, rest].join(' ')} >Company logo</h2>

@@ -1,15 +1,15 @@
 .more-button-sellify {
     position: fixed;
-    top: 30px;
-    right: 80px;
+    top: 80px;
+    right: 32px;
     padding: 0;
     background-color: transparent;
     border-style: none;   
 
     img.ex-more {
         position: fixed;
-        width: 56px;
-        height: 56px;
+        width: 32px;
+        height: 32px;
         z-index: 1000;
     }
 }
