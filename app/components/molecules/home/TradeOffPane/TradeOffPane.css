@@ -11,7 +11,7 @@
   }
   
   .normal .collapse label:hover {
-    color: #007a8c;
+    color: #00b050;
   }
   
   .normal .collapse label[data-status="true"]:before {
@@ -26,7 +26,7 @@
     height: 8px;
     float: left;
     margin: 5px 16px 0 0;
-    color: #007a8c;
+    color: #00b050;
   
     box-sizing: border-box;
     border-style: solid;

@@ -20,10 +20,10 @@ const SellifyTextField = withStyles({
       fontSize: '14px'
     },
     '& label.Mui-focused': {
-      color: '#007a8c',
+      color: '#00b050',
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: '#007a8c',
+      borderBottomColor: '#00b050',
     },
     '& input': {
       fontSize: '14px',
@@ -39,7 +39,7 @@ const SellifyTextField = withStyles({
         borderColor: 'yellow',
       },
       '&.Mui-focused fieldset': {
-        borderColor: '#007a8c',
+        borderColor: '#00b050',
       },
     },
   },
@@ -105,7 +105,7 @@ class TradeOff extends Component {
                 aria-label="upload picture"
                 component="span"
                 size="small"
-                style={{ color: '#007a8c' }}
+                style={{ color: '#00b050' }}
               >
                 <PhotoCamera />
               </IconButton>
@@ -190,7 +190,7 @@ class TradeOff extends Component {
           variant="outlined"
           size="small"
           disableElevation
-          style={{ textTransform: 'none', color: '#007a8c', backgroundColor: '#eaf0f6', borderColor: '#007a8c' }}
+          style={{ textTransform: 'none', color: '#00b050', backgroundColor: '#eaf0f6', borderColor: '#00b050' }}
           onClick={() => this.gotoInforGraph()}
         >
           Submit

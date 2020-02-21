@@ -42,7 +42,7 @@ class InjectApp extends Component {
                   aria-label="upload picture"
                   component="span"
                   size="small"
-                  style={{ color: '#007a8c' }}
+                  style={{ color: '#00b050' }}
                   title="Close the panel"
                 >
                   <ArrowForwardIos />
