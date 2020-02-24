@@ -87,12 +87,6 @@ class TradeOff extends Component {
 
     return (
       <div className={style.main}>
-        <div className={style.head}>
-          A trade-off analysis is a business decision
-          that involves losing one area in return for gains in another area.
-          In simple terms, a tradeoff is where
-          because one business consideration increases another consideration must decrease.
-        </div>
         <div className={classes.margin} style={{ marginTop: '10px' }}>
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>

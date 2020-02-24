@@ -32,7 +32,8 @@ export default class MainSection extends Component {
           <InputBase
             style={{ textAlign: 'center' }}
             inputProps={{ 'aria-label': 'naked' }}
-            placeholder="Naked input"
+            placeholder="User name"
+            value="Doron Luder"
           />
           <Button variant="outlined" size="small" onClick={() => window.open('http://45.32.20.38:3000', '_blank')} style={{ textTransform: 'none', color: '#00b050', backgroundColor: '#eaf0f6', borderColor: '#00b050' }}>
             Add credits

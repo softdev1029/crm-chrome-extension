@@ -34,6 +34,7 @@ export default class TradeOffPane extends Component {
           <label
             onClick={this.handleToggleInfoGraph}
             data-status={editing}
+            title="A trade-off analysis is a business decision that &#10;involves losing one area in return for gains in &#10;another area. In simple terms, a tradeoff is where &#10;because one business consideration increases &#10;another consideration must decrease."
           >
             {todo.text}
           </label>
