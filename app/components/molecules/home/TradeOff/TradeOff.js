@@ -3,10 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { AccountCircle, Description, InsertChart, Work, Business, WbIncandescent, PhotoCamera } from '@material-ui/icons';
+import { AccountCircle, Description, InsertChart, Work } from '@material-ui/icons';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
 
 import style from './TradeOff.css';
 import * as RouteAction from '../../../../actions/routes';
@@ -87,29 +86,6 @@ class TradeOff extends Component {
 
     return (
       <div className={style.main}>
-        <div className={classes.margin} style={{ marginTop: '10px' }}>
-          <Grid container spacing={1} alignItems="flex-end">
-            <Grid item>
-              <WbIncandescent size="small" />
-            </Grid>
-            <Grid item style={{ position: 'relative' }}>
-              <span className={style.head}>Prospect&apos;s logo</span>
-              <IconButton
-                color="primary"
-                aria-label="upload picture"
-                component="span"
-                size="small"
-                style={{ color: '#00b050' }}
-              >
-                <PhotoCamera />
-              </IconButton>
-              <input
-                type="file"
-                style={{ opacity: '0', width: '30px', height: '30px', position: 'absolute', right: '5px' }}
-              />
-            </Grid>
-          </Grid>
-        </div>
         <div className={classes.margin} >
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
@@ -120,7 +96,7 @@ class TradeOff extends Component {
             </Grid>
           </Grid>
         </div>
-        <div className={classes.margin} >
+        <div className={classes.margin} title="Based on our conversation">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <Description size="small" />
