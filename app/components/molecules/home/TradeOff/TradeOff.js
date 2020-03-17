@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { AccountCircle, Description, InsertChart, Work } from '@material-ui/icons';
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
@@ -14,6 +15,43 @@ const SellifyTextField = withStyles({
   root: {
     '&': {
       width: '205px'
+    },
+    '& label': {
+      fontSize: '14px'
+    },
+    '& textarea': {
+      fontSize: '14px'
+    },
+    '& label.Mui-focused': {
+      color: '#00b050',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#00b050',
+    },
+    '& input': {
+      fontSize: '14px',
+    },
+    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+      borderBottom: '2px solid #33475BDE',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#00b050',
+      },
+    },
+  },
+})(TextField);
+
+const SellifyTextFieldWithButton = withStyles({
+  root: {
+    '&': {
+      width: '170px'
     },
     '& label': {
       fontSize: '14px'
@@ -86,7 +124,7 @@ class TradeOff extends Component {
 
     return (
       <div className={style.main}>
-        <div className={classes.margin} >
+        <div className={classes.margin} title="This text is saved automatically.">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <AccountCircle size="small" />
@@ -96,63 +134,46 @@ class TradeOff extends Component {
             </Grid>
           </Grid>
         </div>
-        <div className={classes.margin} title="Based on our conversation">
+        <div className={classes.margin} title="Based on our converstaion. &#10;This template is saved automatically.">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <Description size="small" />
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
+              <SellifyTextField id="input-with-icon-grid" label="Trade-off understanding" multiline rowsMax="5" size="small" />
             </Grid>
           </Grid>
         </div>
-        <div className={classes.margin} >
-          <Grid container spacing={1} alignItems="flex-end">
-            <Grid item>
-              <Description size="small" />
-            </Grid>
-            <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
-            </Grid>
-          </Grid>
-        </div>
-        <div className={classes.margin} >
+        <div className={classes.margin} title="What is the baseline metric or resource &#10;your product/service aims to improve? &#10;This text is saved automatically.">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <InsertChart size="small" />
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Business Consideration No.1" size="small" />
+              <SellifyTextField id="input-with-icon-grid" label="What is the baseline...?" size="small" />
             </Grid>
           </Grid>
         </div>
-        <div className={classes.margin} >
-          <Grid container spacing={1} alignItems="flex-end">
-            <Grid item>
-              <InsertChart size="small" />
-            </Grid>
-            <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Business Consideration No.2" size="small" />
-            </Grid>
-          </Grid>
-        </div>
-        <div className={classes.margin} >
+        <div className={classes.margin} title="This text is saved automatically.">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <Work size="small" />
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Production" size="small" />
+              <SellifyTextFieldWithButton id="input-with-icon-grid" label="Product/Service name" size="small" />
+            </Grid>
+            <Grid item>
+              <AddAPhotoIcon size="small" style={{ color: '#33475B' }} />
             </Grid>
           </Grid>
         </div>
-        <div className={classes.margin} style={{ marginBottom: '10px' }} >
+        <div className={classes.margin} title="Based on our understanding. &#10;This template is saved automatically.">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <Description size="small" />
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" label="Text" size="small" />
+              <SellifyTextField id="input-with-icon-grid" label="Trade-off improvement" multiline rowsMax="5" size="small" />
             </Grid>
           </Grid>
         </div>
@@ -160,7 +181,7 @@ class TradeOff extends Component {
           variant="outlined"
           size="small"
           disableElevation
-          style={{ textTransform: 'none', color: '#00b050', backgroundColor: '#eaf0f6', borderColor: '#00b050' }}
+          style={{ textTransform: 'none', color: '#00b050', backgroundColor: '#eaf0f6', borderColor: '#00b050', marginTop: '15px' }}
           onClick={() => this.gotoInforGraph()}
         >
           Submit
