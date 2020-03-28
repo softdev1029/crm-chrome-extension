@@ -22,6 +22,6 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": [ "contextMenus", "tabs", "storage", "https://github.com/*" ],
-  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src 'self' data:;"
+  "permissions": [ "contextMenus", "tabs",  "webRequest", "storage", "https://github.com/*" ],
+  "content_security_policy": "default-src 'self'; connect-src http://127.0.0.1:3000/api/print_info; script-src 'self' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src 'self' data:;"
 }

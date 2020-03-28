@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import * as RouteAction from '../../../actions/routes';
 import style from './infographView.css';
@@ -103,18 +105,11 @@ const img2s = {
   top: '150px;'
 };
 
+class InfoGraphView extends Component {
+  static propTypes = {
+    routes: PropTypes.object.isRequired,
+  };
 
-@connect(
-  state => ({
-    routes: state.routes,
-    isWindow: state.isWindow,
-    formvalues: state.formvalues
-  }),
-  dispatch => ({
-    actions: bindActionCreators(RouteAction, dispatch)
-  })
-)
-export default class InfoGraphView extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -128,6 +123,14 @@ export default class InfoGraphView extends Component {
   componentDidMount() {
     this.outputd1.style.display = 'none';
     this.outputd2.style.display = 'none';
+
+    const { routes } = this.props;
+    axios({
+      method: 'get',
+      url: `http://127.0.0.1:3000/api/print_info?id=${routes.formvalues.id}`
+    }).then((res) => {
+      this.setState(res.data);
+    });
   }
 
   exportPDF() {
@@ -161,27 +164,35 @@ export default class InfoGraphView extends Component {
   }
 
   render() {
-    const { actions, routes } = this.props;
+    const { name, understanding, baseline, product, improvement } = this.state;
     return (
       <div>
         <div ref={r => this.document = r}>
+          <h1>Dear {name}</h1>
           <p style={ppad}>
-            Thank you for your time earlier. Based on our discussion about your business, we believe you face a trade off
-between two different priorities. On the one hand you are looking for a high level of quality / reward / return. On<br />
-            the other hand you also want a high level of quantity / low level of investment / low level of work.
-Because these are competing values, your challenge is to choose a balance between them.<br />
-            Our product / service can assist you and maximize both sides by increasing your effectiveness as a business,
-            therefore allowing you to increase your resources to obtain both priorities to a high level.
+            Based on our conversation.
+            {understanding}
+            you can only produce a given amount of resource
           </p>
           <div style={ctdiv}>
             <div><h3>TradOff Chart</h3></div>
             <div style={topdiv} />
             <div style={bottomdiv} />
           </div>
+          <p style={ppad}>
+            Based on our understanding.
+            {product}
+          </p>
+          <p style={ppad}>
+            {improvement}
+          </p>
+          <p style={ppad}>
+            A higher value in terms of {baseline}
+          </p>
           <div className={style.gtdiv}>
             <div style={gtdivinner}>
-              <label style={{ position: 'absolute', left: '-52px' }}>{routes.formvalues.val1}</label>
-              <label style={{ position: 'absolute', right: '-52px', bottom: '0' }}>{routes.formvalues.val2}</label>
+              <label style={{ position: 'absolute', left: '-52px' }}>cost</label>
+              <label style={{ position: 'absolute', right: '-52px', bottom: '0' }}>{baseline}</label>
               <img id="output1" style={img1s} ref={c => this.outputd1 = c} />
               <img id="output2" style={img2s} ref={c => this.outputd2 = c} />
               <div style={rbddiv} />
@@ -204,3 +215,13 @@ Because these are competing values, your challenge is to choose a balance betwee
     );
   }
 }
+
+
+export default connect(
+  state => ({
+    routes: state.routes
+  }),
+  dispatch => ({
+    actions: bindActionCreators(RouteAction, dispatch)
+  })
+)(InfoGraphView);
