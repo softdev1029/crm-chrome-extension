@@ -122,12 +122,23 @@ const SellifyTextFieldWithButton = withStyles({
 })(TextField);
 
 class TradeOff extends Component {
-
   static propTypes = {
     // infoGraph: PropTypes.object.isRequired,
     // editInfoGraph: PropTypes.func.isRequired,
     // completeInfoGraph: PropTypes.func.isRequired
   };
+
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      name: '',
+      understanding: '',
+      baseline: '',
+      improvement: '',
+      product: ''
+    };
+  }
 
   onChangeValue(event) {
     //debugger
@@ -136,11 +147,29 @@ class TradeOff extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  async gotoInforGraph() {
-    console.log('sate is : ');
-    console.log(this.state);
+  gotoInforGraph() {
+    const missingProperties = {};
+    if (this.state.name === '') {
+      missingProperties.name = 'My Product';
+    }
+    if (this.state.understanding === '') {
+      missingProperties.understanding = 'Different parts of your business are competing for resources, such that for every unit of cost.';
+    }
+    if (this.state.baseline === '') {
+      missingProperties.baseline = 'Resources';
+    }
 
-    postData(this.state).then((res) => {
+    if (this.state.improvement === '') {
+      missingProperties.improvement = 'Improve the underlying efficiency of your business so that the same unit of cost provides.';
+    }
+
+    if (this.state.product === '') {
+      missingProperties.product = 'Sellify';
+    }
+
+    const data = Object.assign(this.state, missingProperties);
+    this.setState(data);
+    postData(data).then((res) => {
       chrome.windows.create({
         // eslint-disable-next-line no-underscore-dangle
         url: chrome.runtime.getURL(`window.html?popup=true&id=${res.data._id}`),
@@ -173,7 +202,7 @@ class TradeOff extends Component {
               <div style={{ paddingBottom: '7px', paddingLeft: '5px', fontSize: '16px', color: '#33475B', fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' }} >Prospect's first name:</div>
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" variant="outlined" name="name" onChange={(e) => { this.onChangeValue(e); }} />
+              <SellifyTextField id="input-with-icon-grid" variant="outlined" name="name" value={this.state.name} onChange={(e) => { this.onChangeValue(e); }} />
             </Grid>
           </Grid>
         </div>
@@ -186,7 +215,7 @@ class TradeOff extends Component {
               <div style={{ paddingBottom: '7px', paddingLeft: '5px', fontSize: '16px', color: '#33475B', fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' }} >Text:</div>
             </Grid>
             <Grid item>
-              <SellifyMultiLineTextField id="input-with-icon-grid" variant="outlined" multiline rowsMax="5" size="small" name="understanding" onChange={(e) => { this.onChangeValue(e); }} />
+              <SellifyMultiLineTextField id="input-with-icon-grid" variant="outlined" multiline rowsMax="5" size="small" name="understanding" value={this.state.understanding} onChange={(e) => { this.onChangeValue(e); }} />
             </Grid>
           </Grid>
         </div>
@@ -199,7 +228,7 @@ class TradeOff extends Component {
               <div style={{ paddingBottom: '7px', paddingLeft: '5px', fontSize: '16px', color: '#33475B', fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' }} >Baseline metric:</div>
             </Grid>
             <Grid item>
-              <SellifyTextField id="input-with-icon-grid" variant="outlined" size="small" name="baseline" onChange={(e) => { this.onChangeValue(e); }} />
+              <SellifyTextField id="input-with-icon-grid" variant="outlined" size="small" name="baseline" value={this.state.baseline} onChange={(e) => { this.onChangeValue(e); }} />
             </Grid>
           </Grid>
         </div>
@@ -212,7 +241,7 @@ class TradeOff extends Component {
               <div style={{ paddingBottom: '7px', paddingLeft: '5px', fontSize: '16px', color: '#33475B', fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' }} >Product/Service being pitched:</div>
             </Grid>
             <Grid item>
-              <SellifyTextFieldWithButton id="input-with-icon-grid" variant="outlined" size="small" name="product" onChange={(e) => { this.onChangeValue(e); }} />
+              <SellifyTextFieldWithButton id="input-with-icon-grid" variant="outlined" size="small" name="product" value={this.state.product} onChange={(e) => { this.onChangeValue(e); }} />
             </Grid>
             <Grid item>
               <AddAPhotoIcon size="small" style={{ color: '#33475B', marginBottom: '7px' }} />
@@ -228,7 +257,7 @@ class TradeOff extends Component {
               <div style={{ paddingBottom: '7px', paddingLeft: '5px', fontSize: '16px', color: '#33475B', fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' }} >Text:</div>
             </Grid>
             <Grid item>
-              <SellifyMultiLineTextField id="input-with-icon-grid" variant="outlined" multiline rowsMax="5" size="small" name="improvement" onChange={(e) => { this.onChangeValue(e); }} />
+              <SellifyMultiLineTextField id="input-with-icon-grid" variant="outlined" multiline rowsMax="5" size="small" name="improvement" value={this.state.improvement} onChange={(e) => { this.onChangeValue(e); }} />
             </Grid>
           </Grid>
         </div>

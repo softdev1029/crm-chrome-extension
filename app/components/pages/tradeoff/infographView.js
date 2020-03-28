@@ -61,7 +61,9 @@ const rbddiv = {
 };
 
 const ppad = {
-  padding: '30px'
+  color: 'rgb(51, 71, 91)',
+  paddingLeft: '30px',
+  paddingRight: '30px'
 };
 
 const gtddiv1 = {
@@ -168,10 +170,14 @@ class InfoGraphView extends Component {
     return (
       <div>
         <div ref={r => this.document = r}>
-          <h1>Dear {name}</h1>
+          <p style={ppad}>
+            Dear {name}
+          </p>
           <p style={ppad}>
             Based on our conversation.
             {understanding}
+          </p>
+          <p style={ppad}>
             you can only produce a given amount of resource
           </p>
           <div style={ctdiv}>
