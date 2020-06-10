@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const postData = body => axios({
   method: 'post',
-  url: 'http://127.0.0.1:3000/api/print_info',
+  url: 'https://sellify-app.herokuapp.com/',
   data: body,
   headers: {
     'Content-Type': 'application/json',

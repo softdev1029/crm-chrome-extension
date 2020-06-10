@@ -129,7 +129,7 @@ class InfoGraphView extends Component {
     const { routes } = this.props;
     axios({
       method: 'get',
-      url: `http://127.0.0.1:3000/api/print_info?id=${routes.formvalues.id}`
+      url: `https://sellify-app.herokuapp.com/?id=${routes.formvalues.id}`
     }).then((res) => {
       this.setState(res.data);
     });
