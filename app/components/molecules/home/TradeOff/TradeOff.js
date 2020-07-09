@@ -172,7 +172,7 @@ class TradeOff extends Component {
     postData(data).then((res) => {
       chrome.windows.create({
         // eslint-disable-next-line no-underscore-dangle
-        url: chrome.runtime.getURL(`window.html?popup=true&id=${res.data.id}`),
+        url: `https://sellify-app.herokuapp.com/index.php/pdf/print/${res.data.id}`,
         type: 'popup'
       });
     });
